@@ -1,13 +1,18 @@
 import streamlit as st
 
+st.set_page_config(page_title="AI Image Classifier")
+
 st.title("AI Image Classifier")
 
-st.markdown("""
-## Teachable Machine Model
+st.write(
+    "This application uses a Teachable Machine model "
+    "to classify uploaded images using Artificial Intelligence."
+)
 
-Click below to open the live AI classifier.
-""")
+st.info(
+    "Click the button below to open the live AI classifier."
+)
 
-model_url = "PASTE_YOUR_MODEL_LINK_HERE"
+model_url = "PASTE YOUR TEACHABLE MACHINE LINK HERE"
 
-st.link_button("Open AI Model", model_url)
+st.link_button("Launch AI Classifier", model_url)
