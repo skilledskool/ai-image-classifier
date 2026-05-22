@@ -1,48 +1,7 @@
 import streamlit as st
 
-# Page configuration
-st.set_page_config(
-    page_title="AI Image Classifier",
-    page_icon="🤖",
-    layout="centered"
-)
-
-# Custom background and styling
-st.markdown("""
-    <style>
-    .stApp {
-        background: linear-gradient(to right, #ff9966, #ff5e62);
-        color: white;
-    }
-
-    h1 {
-        color: white;
-        text-align: center;
-        font-size: 50px;
-    }
-
-    p {
-        color: white;
-        font-size: 18px;
-        text-align: center;
-    }
-
-    .stButton button {
-        background-color: white;
-        color: #ff5e62;
-        border-radius: 10px;
-        height: 3em;
-        width: 100%;
-        font-size: 18px;
-        font-weight: bold;
-    }
-
-    .stButton button:hover {
-        background-color: #ffe6e6;
-        color: #ff5e62;
-    }
-    </style>
-""", unsafe_allow_html=True)
+# Page title
+st.set_page_config(page_title="AI Image Classifier")
 
 # Title
 st.title("🤖 AI Image Classifier")
@@ -50,13 +9,28 @@ st.title("🤖 AI Image Classifier")
 # Description
 st.write(
     "This application uses a Teachable Machine AI model "
-    "to classify uploaded images."
+    "to classify images."
 )
 
-st.write("Click the button below to launch the AI model.")
+# Teachable Machine link
+model_url = "https://teachablemachine.withgoogle.com/models/wgj1oaU0f/"
 
-# Your Teachable Machine model link
-model_url = "PASTE YOUR TEACHABLE MACHINE LINK HERE"
-
-# Button
-st.link_button("🚀 Launch AI Classifier", model_url)
+# Open link in new tab
+st.markdown(
+    f"""
+    <a href="{model_url}" target="_blank">
+        <button style="
+            background-color:#ff6600;
+            color:white;
+            padding:15px 25px;
+            border:none;
+            border-radius:10px;
+            font-size:18px;
+            cursor:pointer;
+        ">
+            🚀 Launch AI Classifier
+        </button>
+    </a>
+    """,
+    unsafe_allow_html=True
+)
